@@ -45,6 +45,8 @@ class App extends Component {
   
 
 export default withTracker(() => {
-  return {messages: Messages.find({}).fetch(),
+  date = new Date()
+  date.setTime(date - 20000)
+  return {messages: Messages.find({ createdAt: { $gte:  date } }).fetch(),
 };
 })(App);
