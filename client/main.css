@@ -1,0 +1,29 @@
+
+
+textarea, select, input, button { outline: none; }
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(12, 11, 12);
+  margin: 0;
+  padding: 0;
+}
+
+.fullpage{
+  min-height: 100vh;
+  min-width: 100%;  
+}
+
+
+input{
+  background-color: rgb(41, 38, 41);
+  color: aliceblue;
+  border: 0rem;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+}
+
+input:hover{
+  border: 0rem;
+  box-shadow: 0 0 0;
+}
