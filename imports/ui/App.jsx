@@ -31,7 +31,7 @@ class App extends Component {
     return(
       <div  onClick={this.createText} className="fullpage">
           {this.props.messages.map((element) => 
-          (<Message x={element.x} y={element.y} text={element.text} date={element.datetime}></Message>)
+          (<Message x={element.x} y={element.y} text={element.text} date={element.createdAt}></Message>)
           )}
           { this.state.input.visible ? 
           <InputBox 
