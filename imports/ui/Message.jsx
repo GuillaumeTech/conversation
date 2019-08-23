@@ -7,12 +7,11 @@ class Message extends Component {
   
   render() {
     return(
-      <p style={{position: "absolute", top: this.props.Y+"px", left: this.props.x+"px"}} >
-          this.props.text
+      <p style={{position: "absolute", top: this.props.y+"px", left: this.props.x+"px"}} >
+          {this.props.text}
       </p>
     );
   }
-  
 }
 
 export default Message;

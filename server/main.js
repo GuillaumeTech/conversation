@@ -1,31 +1,24 @@
 import { Meteor } from 'meteor/meteor';
-import Messages from '/imports/api/messages';
+import {Messages} from '../imports/api/messages';
 
-function insertLink(title, url) {
-  Links.insert({ title, url, createdAt: new Date() });
+
+function insertMessage(text, x, y) {
+  Messages.insert({ text:text, x:x, y:y, createdAt: new Date() });
 }
 
 Meteor.startup(() => {
   // If the Links collection is empty, add some data.
-  if (Links.find().count() === 0) {
-    insertLink(
-      'Do the Tutorial',
-      'https://www.meteor.com/tutorials/react/creating-an-app'
+  if (Messages.find({}).count() === 0) {
+    insertMessage(
+      'Who are you ?',
+      50,
+      70
     );
 
-    insertLink(
-      'Follow the Guide',
-      'http://guide.meteor.com'
-    );
-
-    insertLink(
-      'Read the Docs',
-      'https://docs.meteor.com'
-    );
-
-    insertLink(
-      'Discussions',
-      'https://forums.meteor.com'
+    insertMessage(
+      'No one',
+      300,
+      500
     );
   }
 });
