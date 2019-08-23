@@ -12,10 +12,10 @@ class Message extends Component {
     let newOpacity
     let date = new Date()
     let diff = date - this.props.date
-    if (diff > 100000){
+    if (diff > 20000){
         newOpacity = 0
     } else {
-        newOpacity = (100000 - diff)/100000
+        newOpacity = (20000 - diff)/20000
     }
     this.setState({opacity:newOpacity})
   }
