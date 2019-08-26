@@ -5,7 +5,6 @@ import {Messages} from '../api/messages.js';
 class InputBox extends Component {
   constructor(props) {
     super(props);
-    //this.handleSubmit = this.handleSubmit.bind(this)
     this.messageInput = null
     this.inputRef = (input) => { this.messageInput = input; }
     this.handleSubmit = this.handleSubmit.bind(this)
