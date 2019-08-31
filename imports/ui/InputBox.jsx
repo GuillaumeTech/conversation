@@ -19,13 +19,8 @@ class InputBox extends Component {
     
     
     const text = this.messageInput.value
-  
-    Messages.insert({
-      text: text,
-      x: this.props.x,
-      y: this.props.y,
-      createdAt: new Date(), // current time
-    });
+    
+    Meteor.call('messages.insert', text, this.props.x, this.props.y, new Date());
  
     this.messageInput.value = '';
     this.props.messageSent()

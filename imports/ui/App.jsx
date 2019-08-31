@@ -45,6 +45,7 @@ class App extends Component {
   
 
 export default withTracker(() => {
+  Meteor.subscribe('messages');
   date = new Date()
   date.setTime(date - 20000)
   return {messages: Messages.find({ createdAt: { $gte:  date } }).fetch(),
