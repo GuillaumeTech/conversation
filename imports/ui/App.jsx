@@ -44,8 +44,7 @@ class App extends Component {
             y={element.y} 
             text={element.text} 
             date={element.createdAt} 
-            key={element.id}
-            color={element.color} ></Message>)
+            color={element.color} />)
           )}
           { this.state.input.visible ? 
           <InputBox 
