@@ -35,3 +35,9 @@ p{
   color: white;
   background-color: black
 }
+
+.button-cancel{
+  color: white;
+  background-color: black;
+  margin-top: 0.5rem;
+}
