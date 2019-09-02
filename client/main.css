@@ -30,3 +30,8 @@ p{
   padding: 0.2rem;
   margin: 0rem;
 }
+
+.button-color{
+  color: white;
+  background-color: black
+}

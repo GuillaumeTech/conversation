@@ -37,13 +37,14 @@ class App extends Component {
     return(
       <div>
         <ColorPick colorChange={this.handleChangeComplete} color={this.state.color}/>
-        <div  onClick={this.createText} className="fullpage">
+        <div onClick={this.createText} className="fullpage">
           {this.props.messages.map((element) => 
           (<Message 
             x={element.x} 
             y={element.y} 
             text={element.text} 
             date={element.createdAt} 
+            key={element._id}
             color={element.color} />)
           )}
           { this.state.input.visible ? 

@@ -31,14 +31,9 @@ class ColorPick extends Component {
       left: '0px',
     }
 
-    const button = {
-        color:"white",
-        background:"black"
-    }
-
     return (
       <div style={{ padding:"1rem" }} >
-        <button style={button} onClick={ this.handleClick }>Pick Color</button>
+        <button className="button-color" onClick={ this.handleClick }>Pick Color</button>
         { this.state.displayColorPicker ? <div style={ popover }>
           <div style={ cover } onClick={ this.handleClose }/>
           <CompactPicker color={ this.props.color}
