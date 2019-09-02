@@ -13,19 +13,20 @@ if (Meteor.isServer) {
 
 
 Meteor.methods({
-    'messages.insert'(text,x,y,createdAt) {
+    'messages.insert'(text, x, y, createdAt, color) {
       check(text, String);
       check(x, Number);
       check(y, Number);
       check(createdAt, Date);
-
+      check(color, String)
 
    
       Messages.insert({
         text: text,
         x: x,
         y: y,
-        createdAt: createdAt
+        createdAt: createdAt,
+        color: color
       });
     }
   });

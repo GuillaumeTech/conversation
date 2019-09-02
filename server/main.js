@@ -3,11 +3,11 @@ import {Messages} from '../imports/api/messages';
 
 
 function insertMessage(text, x, y) {
-  Messages.insert({ text:text, x:x, y:y, createdAt: new Date() });
+  Messages.insert({ text:text, x:x, y:y, createdAt: new Date(), color: color });
 }
 
 Meteor.startup(() => {
-  // If the Links collection is empty, add some data.
+  // If the Message collection is empty, add some data.
   if (Messages.find({}).count() === 0) {
     insertMessage(
       'Who are you ?',

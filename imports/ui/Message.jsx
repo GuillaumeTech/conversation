@@ -23,7 +23,7 @@ class Message extends Component {
 
   render() {
     return(
-      <p style={{position: "absolute", top: this.props.y+"px", left: this.props.x+"px", opacity: this.state.opacity}} >
+      <p style={{position: "absolute", top: this.props.y+"px", left: this.props.x+"px", opacity: this.state.opacity, color:this.props.color}} >
           {this.props.text}
       </p>
     );
