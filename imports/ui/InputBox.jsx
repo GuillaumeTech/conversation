@@ -29,10 +29,14 @@ class InputBox extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit} >
-      <input ref={this.inputRef} className="input" style={{position: "absolute", top: this.props.y+"px", left: this.props.x+"px", color:this.props.color}}>
+      <div style={{position: "absolute", top: this.props.y+"px", left: this.props.x+"px", color:this.props.color}}>
+      <form onSubmit={this.handleSubmit}  >
+      <input ref={this.inputRef} className="input" >
       </input>
+
       </form>
+      <button className='button-cancel' onClick={this.props.messageSent} > Cancel</button>
+      </div>
     );
   }
   
