@@ -24,7 +24,7 @@ input{
 }
 
 
-p{
+.message{
   color: aliceblue;
   font-size: 1.1rem;
   padding: 0.2rem;
@@ -33,11 +33,27 @@ p{
 
 .button-color{
   color: white;
-  background-color: black
+  background-color: rgb(12, 11, 12);
+  font-size: 0.7rem;
 }
+
+.status-info{
+  margin-block-start: 0rem;
+  margin-left: 0.8rem; 
+  font-size: 1rem;
+}
+
 
 .button-cancel{
   color: white;
-  background-color: black;
+  background-color:  rgb(12, 11, 12);
+  font-size: 0.8rem;
   margin-top: 0.5rem;
+}
+
+.header{
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
 }

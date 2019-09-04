@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import {Messages} from '../imports/api/messages';
+import { Messages } from '../imports/api/messages';
+import { Temp } from '../imports/api/temp';
 
 
 function insertMessage(text, x, y) {
@@ -21,4 +22,21 @@ Meteor.startup(() => {
       500
     );
   }
+  if (Temp.find({}).count() === 0) {
+    Temp.insert({ tempName: 'writingUsers', tempValue: 0 })
+    Temp.insert({ tempName: 'activeUsers', tempValue: 0 })
+  }
 });
+
+
+Meteor.onConnection((client) => {
+  Temp.update(
+    { tempName: 'activeUsers' },
+    { $set: { tempValue: Meteor.default_server.stream_server.all_sockets().length } })
+
+  client.onClose(() => {
+    Temp.update(
+      { tempName: 'activeUsers' },
+      { $set: { tempValue: Meteor.default_server.stream_server.all_sockets().length } })
+  })
+})
