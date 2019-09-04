@@ -3,8 +3,9 @@ import { Messages } from '../imports/api/messages';
 import { Temp } from '../imports/api/temp';
 
 
-function insertMessage(text, x, y) {
-  Messages.insert({ text:text, x:x, y:y, createdAt: new Date(), color: color });
+
+function insertMessage(text, x, y, color) {
+  Messages.insert({ text: text, x: x, y: y, createdAt: new Date(), color: color });
 }
 
 Meteor.startup(() => {
@@ -13,13 +14,15 @@ Meteor.startup(() => {
     insertMessage(
       'Who are you ?',
       50,
-      70
+      70,
+      '#fff'
     );
 
     insertMessage(
       'No one',
       300,
-      500
+      500,
+      '#fff'
     );
   }
   if (Temp.find({}).count() === 0) {
